@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img id="logo" src="./img/김밥로고.png" alt="" width="160"></a>
+        <nav id="main_menu">
+            <ul>
+                <li><a href=".card-frame">Types of Gimbap</a></li>
+                <li><a href="#recommend">Famous restaurant</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        var links = document.querySelectorAll('ul li a');
+        links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); 
+                var targetId = this.getAttribute('href'); 
+                var targetElement = document.querySelector(targetId); 
+                if (targetElement) {   
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });</script>
+</body>
+</html>
